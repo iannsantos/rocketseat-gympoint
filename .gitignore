@@ -1,0 +1,11 @@
+node_modules
+
+// secret token
+src/config/auth.js
+
+// database connection
+src/config/database.js
+
+// yarn
+yarn.lock
+yarn-error.log
