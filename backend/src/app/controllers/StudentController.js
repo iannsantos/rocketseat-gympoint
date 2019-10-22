@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import Student from '../models/Student';
+import User from '../models/User';
 
 class StudentController {
   async store(req, res) {
@@ -19,11 +20,11 @@ class StudentController {
 
     const { email } = req.body;
 
-    if (
-      await Student.findOne({
-        where: { email },
-      })
-    ) {
+    const emailExists = await Student.findOne({
+      where: { email },
+    });
+
+    if (emailExists) {
       return res.status(400).json({ error: 'This e-mail is already in use' });
     }
 
