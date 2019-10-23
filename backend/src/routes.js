@@ -22,6 +22,13 @@ routes.get('/plans', authMiddleware, PlanController.index);
 routes.put('/plans/:id', authMiddleware, PlanController.update);
 routes.delete('/plans/:id', authMiddleware, PlanController.delete);
 
+routes.get('/registrations', authMiddleware, RegistrationController.index);
 routes.post('/registrations', authMiddleware, RegistrationController.store);
+routes.put('/registrations/:id', authMiddleware, RegistrationController.update);
+routes.delete(
+  '/registrations/:id',
+  authMiddleware,
+  RegistrationController.delete
+);
 
 export default routes;

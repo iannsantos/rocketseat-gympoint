@@ -4,23 +4,23 @@ import Mail from '../../lib/Mail';
 
 class RegistrationMail {
   get key() {
-    return 'RegistrationMail';
+    return 'UpdateRegistrationMail';
   }
 
   async handle({ data }) {
-    const { student, plan, end_date, price } = data;
+    const { registration, student, plan } = data;
 
     await Mail.sendMail({
       to: `${student.name} <${student.email}>`,
-      subject: 'GymPoint - Matrícula',
-      template: 'registration',
+      subject: 'GymPoint - Atualização na matrícula',
+      template: 'updateRegistration',
       context: {
         student: student.name,
         plan: plan.title,
-        end_date: format(parseISO(end_date), "dd 'de' MMMM'", {
+        end_date: format(parseISO(registration.end_date), "dd 'de' MMMM", {
           locale: pt,
         }),
-        price,
+        price: registration.price,
       },
     });
   }
