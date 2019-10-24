@@ -15,8 +15,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      answaer: Sequelize.STRING,
-      answaer_at: Sequelize.DATE,
+      answer: Sequelize.STRING,
+      answer_at: Sequelize.DATE,
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

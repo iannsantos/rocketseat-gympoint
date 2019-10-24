@@ -9,6 +9,7 @@ import PlanController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
 import CheckinController from './app/controllers/CheckinController';
 import HelpOrderController from './app/controllers/HelpOrderController';
+import AnswerController from './app/controllers/AnswerController';
 
 const routes = new Router();
 
@@ -39,10 +40,14 @@ routes.post(
   CheckinController.store
 );
 
+routes.get('/students/:student_id/help-orders', HelpOrderController.index);
+routes.post('/students/:student_id/help-orders', HelpOrderController.store);
+
+routes.get('/help-orders', authMiddleware, AnswerController.index);
 routes.post(
-  '/students/:student_id/help-orders',
+  '/help-orders/:help_order_id/answer',
   authMiddleware,
-  HelpOrderController.store
+  AnswerController.store
 );
 
 export default routes;
