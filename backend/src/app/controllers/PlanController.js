@@ -56,7 +56,7 @@ class PlanController {
       return res.status(400).json({ error: 'Validation failed' });
     }
 
-    const plan = await Plan.findByPk(req.params.id);
+    const plan = await Plan.findByPk(req.params.plan_id);
 
     if (!plan) {
       return res.status(400).json({ error: "This plan doesn't exist" });
@@ -96,7 +96,7 @@ class PlanController {
   }
 
   async delete(req, res) {
-    const plan = await Plan.findByPk(req.params.id);
+    const plan = await Plan.findByPk(req.params.plan_id);
 
     if (!plan) {
       return res.status(400).json({ error: "This plan doesn't exist" });

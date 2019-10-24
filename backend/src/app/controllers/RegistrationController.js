@@ -98,7 +98,9 @@ class RegistrationController {
   }
 
   async update(req, res) {
-    const registration = await Registration.findByPk(req.params.id);
+    const registration = await Registration.findByPk(
+      req.params.registration_id
+    );
 
     // check if registration exist
     if (!registration) {
@@ -150,7 +152,9 @@ class RegistrationController {
   }
 
   async delete(req, res) {
-    const registration = await Registration.findByPk(req.params.id);
+    const registration = await Registration.findByPk(
+      req.params.registration_id
+    );
 
     if (!registration) {
       return res.status(400).json({ error: "This plan doesn't exist" });

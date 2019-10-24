@@ -22,12 +22,16 @@ routes.put('/students', authMiddleware, StudentController.update);
 
 routes.post('/plans', authMiddleware, PlanController.store);
 routes.get('/plans', authMiddleware, PlanController.index);
-routes.put('/plans/:id', authMiddleware, PlanController.update);
-routes.delete('/plans/:id', authMiddleware, PlanController.delete);
+routes.put('/plans/:plan_id', authMiddleware, PlanController.update);
+routes.delete('/plans/:plan_id', authMiddleware, PlanController.delete);
 
 routes.get('/registrations', authMiddleware, RegistrationController.index);
 routes.post('/registrations', authMiddleware, RegistrationController.store);
-routes.put('/registrations/:id', authMiddleware, RegistrationController.update);
+routes.put(
+  '/registrations/:registration_id',
+  authMiddleware,
+  RegistrationController.update
+);
 routes.delete(
   '/registrations/:id',
   authMiddleware,
@@ -43,7 +47,7 @@ routes.post(
 routes.get('/students/:student_id/help-orders', HelpOrderController.index);
 routes.post('/students/:student_id/help-orders', HelpOrderController.store);
 
-routes.get('/help-orders', authMiddleware, AnswerController.index);
+routes.get('/help-orders/unanswered', authMiddleware, AnswerController.index);
 routes.post(
   '/help-orders/:help_order_id/answer',
   authMiddleware,
