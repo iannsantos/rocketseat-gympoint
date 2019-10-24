@@ -150,6 +150,14 @@ class RegistrationController {
   }
 
   async delete(req, res) {
+    const registration = await Registration.findByPk(req.params.id);
+
+    if (!registration) {
+      return res.status(400).json({ error: "This plan doesn't exist" });
+    }
+
+    await registration.destroy();
+
     return res.json();
   }
 }
