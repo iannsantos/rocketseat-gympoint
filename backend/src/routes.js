@@ -38,6 +38,7 @@ routes.delete(
   RegistrationController.delete
 );
 
+routes.get('/students/:student_id/checkins', CheckinController.index);
 routes.post(
   '/students/:student_id/checkins',
   authMiddleware,
