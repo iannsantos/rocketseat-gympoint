@@ -1,7 +1,33 @@
 import * as Yup from 'yup';
+import Sequelize from 'sequelize';
 import Student from '../models/Student';
 
 class StudentController {
+  async index(req, res) {
+    const { Op } = Sequelize;
+    const { q } = req.query;
+
+    if (q) {
+      const student = await Student.findAll({
+        where: {
+          name: {
+            [Op.iLike]: q,
+          },
+        },
+      });
+
+      if (student.length === 0) {
+        return res.json({ error: 'There is no student with this name.' });
+      }
+
+      return res.json(student);
+    }
+
+    const students = await Student.findAll();
+
+    return res.json(students);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),

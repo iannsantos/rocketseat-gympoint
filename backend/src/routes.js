@@ -17,6 +17,7 @@ routes.post('/users', UserController.store);
 
 routes.post('/sessions', SessionController.store);
 
+routes.get('/students', authMiddleware, StudentController.index);
 routes.post('/students', authMiddleware, StudentController.store);
 routes.put('/students', authMiddleware, StudentController.update);
 
