@@ -20,9 +20,9 @@ export default function SignIn() {
       <strong>GYMPOINT</strong>
       <Form onSubmit={handleSubmit}>
         <span>YOUR E-MAIL</span>
-        <Input name="email" placeholder="example@email.com" />
+        <Input name="email" type="email" placeholder="example@email.com" />
         <span>YOUR PASSWORD</span>
-        <Input name="password" placeholder="***********" />
+        <Input name="password" type="password" placeholder="***********" />
         <button type="submit">
           {loading ? 'Carregando...' : 'Entrar no sistema'}
         </button>
