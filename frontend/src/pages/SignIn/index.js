@@ -4,6 +4,8 @@ import { Form, Input } from '@rocketseat/unform';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
+import logo from '~/assets/logo.svg';
+
 export default function SignIn() {
   const dispatch = useDispatch();
   const { loading } = useSelector(state => state.auth);
@@ -14,7 +16,7 @@ export default function SignIn() {
 
   return (
     <>
-      {/* <img src="" alt="" /> */}
+      <img src={logo} alt="Gympoint" />
       <strong>GYMPOINT</strong>
       <Form onSubmit={handleSubmit}>
         <span>YOUR E-MAIL</span>
