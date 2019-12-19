@@ -22,16 +22,16 @@ export default function Header() {
           <img src={logo} alt="Gympoint" />
           <Link to="/home">GYMPOINT</Link>
           <div>
-            <LinkNav activeClassName to="/students">
+            <LinkNav activeClassName="active" to="/students">
               ALUNOS
             </LinkNav>
-            <LinkNav activeClassName to="/plans">
+            <LinkNav activeClassName="active" to="/plans">
               PLANOS
             </LinkNav>
-            <LinkNav activeClassName to="/registrations">
+            <LinkNav activeClassName="active" to="/registrations">
               MATRÍCULAS
             </LinkNav>
-            <LinkNav activeClassName to="/help-orders">
+            <LinkNav activeClassName="active" to="/help-orders">
               PEDIDOS DE AUXÍLIO
             </LinkNav>
           </div>

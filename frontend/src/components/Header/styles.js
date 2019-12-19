@@ -31,7 +31,7 @@ export const Content = styled.div`
       color: #ee4d64;
       font-weight: bold;
       font-size: 15px;
-      border-right: 1px solid #eee;
+      border-right: 1px solid #ddd;
       margin-right: 20px;
       padding-right: 20px;
     }
@@ -56,8 +56,8 @@ export const Profile = styled.div`
 `;
 
 export const LinkNav = styled(NavLink)`
-  color: #666;
-  margin: 0 8px;
+  color: #999;
+  margin: 0 10px;
   font-weight: bold;
   transition: border 0.2s;
 
@@ -66,6 +66,6 @@ export const LinkNav = styled(NavLink)`
   }
 
   &.${props => props.activeClassName} {
-    color: #000;
+    color: #444;
   }
 `;
